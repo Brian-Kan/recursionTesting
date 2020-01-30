@@ -82,9 +82,17 @@ const recExp = function pow(x, n) {
 
 // START!
 
-const racecar = "Racecar"
+const racecar = "RaCecAr"
 const otto = "Otto"
 const mom = "mom"
+
+const superQwerty = "qwertyPytrewq"
+const busted = "BuSTed"
+const numbers = "123454321"
+
+const superCh1 = "A nut for a jar of tuna"
+const superCh2 = "Murder for a jar of red rum"
+
 
 // STEPS
 // function must:
@@ -98,7 +106,31 @@ const mom = "mom"
 // Challenge: odd number of letters vs even number of letters.
 
 const palindrome = function (word) {
-    word.split()
+    // const palArray = []
+
+    // This removes the spaces if the palindrome is a sentence.
+    const spaceRemoval = word.replace(/ /gi, "")
+
+    // This places all the letters in lower case as the matching is case sensitive.
+    const lowerWord = spaceRemoval.toLowerCase()
+
+    // This places all the letters in an array for easier management.
+    const letterArray = lowerWord.split("")
+    
+    // This function compares the letters of the palindromes for their respective match.
+    for (i = 0; i < letterArray.length; i++){
+        // countdown is to 
+        let countdown = i + 1
+
+        if (letterArray[i] == letterArray[letterArray.length - countdown]){
+            console.log(`letterArray[${letterArray[i]}]:`, letterArray[i])
+            console.log(`matching letter [${letterArray[letterArray.length - countdown]}]:`, letterArray[letterArray.length - countdown])
+        } else {
+            console.log("Something went wrong")
+        }
+
+    }
+    return `"${word}" is a palindrome!`    
 }
 
-
+console.log(palindrome(superCh1))
