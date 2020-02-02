@@ -134,3 +134,38 @@ const palindrome = function (word) {
 }
 
 console.log(palindrome(superCh1))
+
+
+
+// RECURSIVE VERSION !!!!!!
+
+// I must identify the repeating pattern and create a function that utilizes recursiveness.
+
+// initial start point
+// iteration break point / difference / pattern
+// call in on itself
+
+
+// initial start point
+// -- start with the first and last in the array
+
+// iteration break point / difference / pattern from one set to the next set
+// EXAMPLE: 6 letter word
+// -- first => second / last => second-last
+// ---- second => third / second-last => third-last
+// ------ third => fourth / third-last => fourth-last
+
+// the difference is one MORE from the first and one LESS from the last
+// x = x = 1 and y = y - 1
+
+// racecar
+
+
+// call in on itself
+
+
+
+
+
+
+// Fib recursion exercise
