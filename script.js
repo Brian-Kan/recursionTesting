@@ -133,7 +133,7 @@ const palindrome = function (word) {
     return `"${word}" is a palindrome!`    
 }
 
-console.log(palindrome(superCh1))
+// console.log(palindrome(superCh1))
 
 
 
@@ -171,7 +171,7 @@ console.log(palindrome(superCh1))
 // second is the equation that calls in on itself to continue
 
 const recPalin = function (word) {
-
+    console.log('recPalin function is firing')
     // This removes the spaces if the palindrome is a sentence.
     const spaceRemoval = word.replace(/ /gi, "")
 
@@ -181,17 +181,33 @@ const recPalin = function (word) {
     // This places all the letters in an array for easier management.
     const letterArray = lowerWord.split("")
 
+    const wordLength = lowerWord.length
+
+    const firstLetter = lowerWord.charAt(0)
+    const lastLetter = lowerWord.charAt(wordLength - 1)
+
+    console.log(`Prior to the if statement, the first letter is: ${firstLetter} and the last letter is: ${lastLetter}.`)
+
     // Error handle -- check the 2 matching letters
     // IF they don't match, exit
     if (firstLetter !== lastLetter) {
+        console.log(`The first letter is: ${firstLetter}`)
+        console.log(`The last letter is: ${lastLetter}`)
+        console.log("You are at the letter error handling stage.")
         return `${word} is not a palindrome`
     }
 
-    if (letterArray.length == 0 || 1) {
-        return `${word} is a palindrome!`
+    // alternatively for below for exiting: if (word.length == 0 || 1)
+    // letterArray.length == 0 || 1
+    if (word.length == 0 || 1) {
+        console.log("You are at the recursion exit stage.")
+        return console.log(`${word} is a palindrome!`)
     } else {
-        // 'word' = substring(secondLetter, penultLetter)
-        return recPalin(word)
+        const secondLetter = word.charAt(1)
+        const penultLetter = word.charAt(length - 1)
+        const wordFragment = word.substring(secondLetter, penultLetter)
+        console.log("typeof wordFragment is:", typeof wordFragment)
+        return recPalin(wordFragment)
     }
     
     // if (letterArray[1] == letterArray[letterArray.length]) {
@@ -215,6 +231,8 @@ const recPalin = function (word) {
     //     return recPalin(y-1)
     // }
 }
+
+recPalin(racecar)
 
 
 // NOTE 1: there may be multiple error handling processes that must take place BEFORE the recursion process happens
