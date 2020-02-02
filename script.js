@@ -158,13 +158,31 @@ console.log(palindrome(superCh1))
 // the difference is one MORE from the first and one LESS from the last
 // x = x = 1 and y = y - 1
 
-// racecar
 
 
-// call in on itself
+// understand the basic format of recursion and ***** have it call in on itself !!
+
+// Function starts with what it's taking in
+// it has an 'if' statement
+// first line is the 'stop'
+// second is the equation that calls in on itself to continue
+
+const recPalin = function () {
+    if(the counter reaches the end.  what is the end? palindrome[i] = palindrome[array.length]) {
+        // stop
+        x != y
+        return something
+    } else {
+        // continue
+        return recPalin(x+1)
+        return recPalin(y-1)
+    }
+}
 
 
-
+// NOTE: there may be multiple error handling processes that must take place BEFORE the recursion process happens
+// palindrome pattern is most likely very simple.  EXAMPLE:
+// x + 1 == y - 1
 
 
 
