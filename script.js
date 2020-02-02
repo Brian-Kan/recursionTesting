@@ -8,6 +8,8 @@
 //     // return power
 // }
 
+// ==========================================================================
+
 // Factorial
 const factorial = function (n) {
     var result = 1;
@@ -33,7 +35,7 @@ const recFac = function (n) {
 
 // console.log(recFac(3))
 
-
+// ==========================================================================
 
 // Exponent
 const exponent = function pow(x, n) {
@@ -64,7 +66,7 @@ const recExp = function pow(x, n) {
 
 //   console.log(recExp(5,5))
 
-
+// ==========================================================================
 
 // ======================================
 // PALINDROMES !!!!
@@ -194,14 +196,16 @@ const recPalin = function (word) {
         console.log(`The first letter is: ${firstLetter}`)
         console.log(`The last letter is: ${lastLetter}`)
         console.log("You are at the letter error handling stage.")
-        return `${word} is not a palindrome`
+        const failOutcome = console.log(`"${word}" is NOT a palindrome`)
+        return failOutcome
     }
 
     // alternatively for below for exiting: if (word.length == 0 || 1)
     // letterArray.length == 0 || 1
     if (word.length == 0 || 1) {
         console.log("You are at the recursion exit stage.")
-        return console.log(`${word} is a palindrome!`)
+        const exitOutcome = console.log(`"${word}" IS a palindrome!`)
+        return exitOutcome
     } else {
         const secondLetter = word.charAt(1)
         const penultLetter = word.charAt(length - 1)
@@ -232,7 +236,7 @@ const recPalin = function (word) {
     // }
 }
 
-recPalin(racecar)
+recPalin("binkY")
 
 
 // NOTE 1: there may be multiple error handling processes that must take place BEFORE the recursion process happens
