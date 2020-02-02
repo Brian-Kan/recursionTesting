@@ -156,7 +156,10 @@ console.log(palindrome(superCh1))
 // ------ third => fourth / third-last => fourth-last
 
 // the difference is one MORE from the first and one LESS from the last
-// x = x = 1 and y = y - 1
+// x = x + 1 and y = y - 1
+
+// THEREFORE: palindromes START with the first letter AND the last letter.  That's it.
+// The recursion equation will compare x + 1 == y - 1 where '1' is the iterable.
 
 
 
@@ -167,23 +170,65 @@ console.log(palindrome(superCh1))
 // first line is the 'stop'
 // second is the equation that calls in on itself to continue
 
-const recPalin = function () {
-    if(the counter reaches the end.  what is the end? palindrome[i] = palindrome[array.length]) {
-        // stop
-        x != y
-        return something
-    } else {
-        // continue
-        return recPalin(x+1)
-        return recPalin(y-1)
+const recPalin = function (word) {
+
+    // This removes the spaces if the palindrome is a sentence.
+    const spaceRemoval = word.replace(/ /gi, "")
+
+    // This places all the letters in lower case as the matching is case sensitive.
+    const lowerWord = spaceRemoval.toLowerCase()
+
+    // This places all the letters in an array for easier management.
+    const letterArray = lowerWord.split("")
+
+    // Error handle -- check the 2 matching letters
+    // IF they don't match, exit
+    if (firstLetter !== lastLetter) {
+        return `${word} is not a palindrome`
     }
+
+    if (letterArray.length == 0 || 1) {
+        return `${word} is a palindrome!`
+    } else {
+        // 'word' = substring(secondLetter, penultLetter)
+        return recPalin(word)
+    }
+    
+    // if (letterArray[1] == letterArray[letterArray.length]) {
+    //     return `${word} is a palindrome!`
+    // } else {
+    //     return recPalin(word)
+    // }
+    
+
+    // if they do match, run the function again
+
+
+
+    // if(the counter reaches the end.  what is the end? palindrome[i] = palindrome[array.length]) {
+    //     // stop
+    //     x != y
+    //     return something
+    // } else {
+    //     // continue
+    //     return recPalin(x+1)
+    //     return recPalin(y-1)
+    // }
 }
 
 
-// NOTE: there may be multiple error handling processes that must take place BEFORE the recursion process happens
+// NOTE 1: there may be multiple error handling processes that must take place BEFORE the recursion process happens
 // palindrome pattern is most likely very simple.  EXAMPLE:
 // x + 1 == y - 1
 
+// NOTE 2: I am learning that palindromes are small, simple functions that run a check and repeat itself until the pattern has ended.
+// Most  everything else (error handling, parsing, placing into arrays etc.) are typically done in a more global function BEFORE the recursive function.
+
+// NOTE 3: Recursion does NOT mean the ENTIRE function is recursive.  It means a portion of the overall function may be.
 
 
 // Fib recursion exercise
+
+
+
+// MAKE IT REUSABLE
