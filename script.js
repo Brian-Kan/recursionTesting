@@ -1,24 +1,26 @@
-// ==========================================================================
-
 // ======================================
 // PALINDROMES !!!!
 // ======================================
+
+// ---------------------
+// Requirements:
+// ---------------------
 // Write a function that can determine if a word or sentance is a palindrome (something that is spelled the same way when written forwards or backwards). 
 // The function must utilize recursion
 
 // ---------------------
 // Sample words to test
 // ---------------------
-// racecar
-// otto
+// RaCecAr
+// Otto
 // mom
 // bInKy
 
 // ---------------------
 // SUPER CHALLENGE!!!
 //---------------------
-// A nut for a jar of tuna.
-// Murder for a jar of red rum.
+// A nut for a jar of tuna
+// Murder for a jar of red rum
 // =======================================
 
 // START!
@@ -47,9 +49,8 @@ const recPalin = function (word) {
     const wordLength = lowerWord.length
 
 
-
     // The variables listed below (firstLetter, lastLetter) are important for the recursion part.  
-    // As the word is re-passed through the function it removes the first and last letter of each iteration.
+    // As the word is (re)passed through the function, it removes the first and last letter of each iteration.
     // Example: 
     // On it's first pass, the word is: "racecar"
     // On the second it becomes: "aceca"
@@ -70,14 +71,18 @@ const recPalin = function (word) {
         return failOutcome
     }
 
-    // This is the recursive portion of the code!
+    // This is the recursive portion of the code!!!!
     if (word.length == 0 || 1) {
         const exitOutcome = console.log(`"${word}" IS a palindrome!`)
         return exitOutcome
     } else {
+        // As mentioned above, this is where the first and last letter of the word is removed.
+
+        // Due to the nature of the substring method I need to specify the second letter and LAST letter.
+        // Remember, the substring method will stop BEFORE the last letter.
         const secondLetter = word.charAt(1)
-        const penultLetter = word.charAt(length - 1)
-        const wordFragment = word.substring(secondLetter, penultLetter)
+        const lastLetter = word.charAt(length - 1)
+        const wordFragment = word.substring(secondLetter, lastLetter)
         return recPalin(wordFragment)
     }
     
