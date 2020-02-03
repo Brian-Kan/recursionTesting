@@ -43,8 +43,23 @@ const recPalin = function (word) {
     // This places all the letters in lower case as the matching is case sensitive.
     const lowerWord = spaceRemoval.toLowerCase()
 
+    // This simply gets the length of the word after the spaces have been removed.
     const wordLength = lowerWord.length
+
+
+
+    // The variables listed below (firstLetter, lastLetter) are important for the recursion part.  
+    // As the word is re-passed through the function it removes the first and last letter of each iteration.
+    // Example: 
+    // On it's first pass, the word is: "racecar"
+    // On the second it becomes: "aceca"
+    // On the third it becomes: "cec"
+    // On the fourth it becomes: "e"
+
+    // This get the first of the word.
     const firstLetter = lowerWord.charAt(0)
+
+    // This gets the last letter of the word.
     const lastLetter = lowerWord.charAt(wordLength - 1)
 
 
@@ -55,8 +70,7 @@ const recPalin = function (word) {
         return failOutcome
     }
 
-    // alternatively for below for exiting: if (word.length == 0 || 1)
-    // letterArray.length == 0 || 1
+    // This is the recursive portion of the code!
     if (word.length == 0 || 1) {
         const exitOutcome = console.log(`"${word}" IS a palindrome!`)
         return exitOutcome
